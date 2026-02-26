@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil - Cliente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Negocio</h1>
+        <button onclick="location.href='login.html'">Cerrar Sesión</button>
+        <button id="btnOscuro" style="width: auto;">🌙 Modo Oscuro</button>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Productos Disponibles</h2>
+            <div id="vitrina" class="grid-productos">
+                </div>
+        </section>
+
+        <hr>
+
+        <section class="card">
+            <h2>Mis Solicitudes de Compra</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPedidos">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="cliente.js"></script>
+</body>
+</html>

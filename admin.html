@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Control - Administrador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Mi Negocio</h1>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button> 
+        <button id="btnOscuro" style="width: auto;">🌙 Modo Oscuro</button>
+    </header>
+
+    <main class="admin-container">
+        <section class="card">
+            <h3>Nuevo Producto</h3>
+            <form id="productoForm">
+                <input type="text" id="nombreProd" placeholder="Nombre" required>
+                <input type="number" id="precioProd" placeholder="Precio" required>
+                <input type="number" id="stockProd" placeholder="Cantidad" required>
+                <button type="submit">Agregar al Inventario</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h3>Inventario Actual</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

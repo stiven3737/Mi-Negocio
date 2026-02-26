@@ -1,0 +1,103 @@
+/* 1. Configuración General (Fuentes y Colores) */
+:root {
+    --primario: #2563eb;    /* Azul moderno */
+    --secundario: #10b981;  /* Verde para acciones positivas */
+    --peligro: #ef4444;     /* Rojo para eliminar */
+    --fondo: #f3f4f6;       /* Gris muy clarito para el fondo */
+    --texto: #1f2937;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    margin: 0;
+    padding: 20px;
+}
+
+/* 2. Contenedores (Tarjetas blancas) */
+.container, .admin-container, .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* 3. Títulos y Textos */
+h2, h3 {
+    color: var(--primario);
+    margin-top: 0;
+}
+
+/* 4. Formularios (Inputs y Botones) */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-sizing: border-box; /* Para que no se salgan del cuadro */
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primario);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* 5. Tablas Elegantes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: #f9fafb;
+    color: var(--primario);
+}
+
+/* 6. Diseño para la Vitrina de Clientes (Grid) */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.producto-item {
+    border: 1px solid #e5e7eb;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background: #fff;
+}
+
+/* 7. Botones pequeños para tablas */
+td button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 2px;
+}

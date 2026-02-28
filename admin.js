@@ -127,20 +127,33 @@ function prepararEdicion(id) {
 // --- ACTUALIZAMOS LA TABLA PARA TENER EL BOTÓN DE EDITAR ---
 function mostrarProductos() {
     const productos = JSON.parse(localStorage.getItem('productos')) || [];
-    tablaProductos.innerHTML = "";
+    const tabla = document.getElementById('tablaProductos');
+    tabla.innerHTML = "";
 
     productos.forEach((prod) => {
         const fila = document.createElement('tr');
+        
+        // Creamos un ID único para el contenedor del QR de este producto
+        const qrId = `qr-${prod.id}`;
+
         fila.innerHTML = `
             <td>${prod.nombre}</td>
             <td>$${prod.precio}</td>
-            <td>${prod.stock} u.</td>
-            <td>
-                <button onclick="prepararEdicion(${prod.id})" style="background:orange; color:white;">Editar</button>
-                <button onclick="eliminarProducto(${prod.id})" style="background:red; color:white;">Eliminar</button>
+            <td>${prod.stock}</td>
+            <td id="${qrId}"></td> <td>
+                <button onclick="prepararEdicion(${prod.id})">Editar</button>
+                <button onclick="eliminarProducto(${prod.id})">Eliminar</button>
             </td>
         `;
-        tablaProductos.appendChild(fila);
+        tabla.appendChild(fila);
+
+        // --- Generar el QR ---
+        // El QR contendrá el nombre y precio para que el cliente lo vea al escanear
+        new QRCode(document.getElementById(qrId), {
+            text: `Producto: ${prod.nombre} - Precio: ${prod.precio}`,
+            width: 60,
+            height: 60
+        });
     });
 }
 

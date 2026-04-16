@@ -1,103 +1,89 @@
-/* 1. Configuración General (Fuentes y Colores) */
+/* VARIABLES DE DISEÑO PROFESIONAL */
 :root {
-    --primario: #2563eb;    /* Azul moderno */
-    --secundario: #10b981;  /* Verde para acciones positivas */
-    --peligro: #ef4444;     /* Rojo para eliminar */
-    --fondo: #f3f4f6;       /* Gris muy clarito para el fondo */
-    --texto: #1f2937;
+    --primary: #4f46e5;    /* Azul Indigo moderno */
+    --secondary: #10b981;  /* Esmeralda para éxito */
+    --dark: #1f2937;       /* Gris azulado para textos */
+    --light: #f9fafb;      /* Fondo ultra limpio */
+    --glass: rgba(255, 255, 255, 0.9);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--fondo);
-    color: var(--texto);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    padding: 20px;
 }
 
-/* 2. Contenedores (Tarjetas blancas) */
-.container, .admin-container, .card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
+.container {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* 3. Títulos y Textos */
-h2, h3 {
-    color: var(--primario);
-    margin-top: 0;
+h2 {
+    color: var(--dark);
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
-/* 4. Formularios (Inputs y Botones) */
+/* INPUTS ESTILO MINIMALISTA */
 input {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    box-sizing: border-box; /* Para que no se salgan del cuadro */
-    font-size: 16px;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* BOTONES CON PERSONALIDAD */
 button {
     width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--primario);
+    padding: 14px;
+    background: linear-gradient(to right, #4f46e5, #7c3aed);
     color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+    border: none;
+    border-radius: 10px;
     font-size: 16px;
-    margin-top: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 10px;
 }
 
 button:hover {
-    filter: brightness(1.2);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
 }
 
-/* 5. Tablas Elegantes */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+
+
+/* ENLACES */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-th, td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-th {
-    background-color: #f9fafb;
-    color: var(--primario);
-}
-
-/* 6. Diseño para la Vitrina de Clientes (Grid) */
-.grid-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.producto-item {
-    border: 1px solid #e5e7eb;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    background: #fff;
-}
-
-/* 7. Botones pequeños para tablas */
-td button {
-    width: auto;
-    padding: 5px 10px;
-    font-size: 14px;
-    margin: 2px;
+a:hover {
+    text-decoration: underline;
 }
